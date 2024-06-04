@@ -1,4 +1,4 @@
-package br.com.curso.vo;
+package br.com.curso.vov1;
 
 import java.io.Serializable;
 
@@ -35,12 +35,12 @@ public class PersonVO implements Serializable {
         this.firstName = firstName;
     }
 
-    public String getLatsName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLatsName(String latsName) {
-        this.lastName = latsName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getAddressName() {

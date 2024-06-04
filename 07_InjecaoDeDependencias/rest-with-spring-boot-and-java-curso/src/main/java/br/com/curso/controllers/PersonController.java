@@ -19,10 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import br.com.curso.services.PersonServices;
-import br.com.curso.vo.PersonVO;
+import br.com.curso.vov1.PersonVO;
+
 
 @RestController
-@RequestMapping("/Person")
+@RequestMapping("/person")
 public class PersonController {
 
 	@Autowired
@@ -50,7 +51,7 @@ public class PersonController {
 
 	return service.create(PersonVO);
 	}
-
+	
 	@PutMapping(
 	consumes = MediaType.APPLICATION_JSON_VALUE , 
 	produces = MediaType.APPLICATION_JSON_VALUE)

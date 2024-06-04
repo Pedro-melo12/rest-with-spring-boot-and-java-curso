@@ -51,12 +51,12 @@ public class Person implements Serializable {
         this.firstName = firstName;
     }
 
-    public String getLatsName() {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLatsName(String latsName) {
-        this.lastName = latsName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getAddressName() {

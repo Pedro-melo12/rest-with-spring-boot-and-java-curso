@@ -12,7 +12,8 @@ import br.com.curso.exceptions.ResourceNotFoundException;
 import br.com.curso.mapper.DozerMapper;
 import br.com.curso.model.Person;
 import br.com.curso.repositories.PersonRepository;
-import br.com.curso.vo.PersonVO;
+import br.com.curso.vov1.PersonVO;
+
 
 @Service
 public class PersonServices {
@@ -22,6 +23,8 @@ public class PersonServices {
     
     @Autowired
     PersonRepository repository;
+
+    
 
     public List<PersonVO> findAll(){
 
@@ -61,7 +64,7 @@ public class PersonServices {
         .orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
 
         entity.setFirstName(personVO.getFirstName());
-        entity.setLatsName(personVO.getLatsName());
+        entity.setLastName(personVO.getLastName());
         entity.setAddressName(personVO.getAddressName());
         entity.setGender(personVO.getGender());
 
