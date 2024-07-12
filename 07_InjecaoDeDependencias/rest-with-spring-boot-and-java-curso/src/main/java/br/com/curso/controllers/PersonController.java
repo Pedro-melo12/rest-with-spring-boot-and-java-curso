@@ -23,20 +23,20 @@ import br.com.curso.vov1.PersonVO;
 
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/person/v1")
 public class PersonController {
 
 	@Autowired
 	private PersonServices service;
 
-	@GetMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "{id}", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 	
 	public PersonVO findById(@PathVariable(value = "id") Long id) {
 
 	return service.findById(id);
 	}
 	
-	@GetMapping( produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping( produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 	
 	public List <PersonVO> findAll()  {
 
@@ -44,8 +44,8 @@ public class PersonController {
 	}
 	
 	@PostMapping(
-	consumes = MediaType.APPLICATION_JSON_VALUE , 
-	produces = MediaType.APPLICATION_JSON_VALUE)
+	consumes = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE}, 
+	produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 	
 	public PersonVO create(@RequestBody PersonVO PersonVO)  {
 
@@ -53,8 +53,8 @@ public class PersonController {
 	}
 	
 	@PutMapping(
-	consumes = MediaType.APPLICATION_JSON_VALUE , 
-	produces = MediaType.APPLICATION_JSON_VALUE)
+	consumes ={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE} , 
+	produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 	
 	public PersonVO update(@RequestBody PersonVO PersonVO)  {
 
